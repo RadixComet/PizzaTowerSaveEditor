@@ -48,7 +48,7 @@ namespace PizzaTowerSaveEditor.Forms
             }
             Console.WriteLine($"Loaded: \"{PizzaTowerGlobalSaveDataFilepath}\"");
 
-            this.Controls.Add(new Controls.PizzaTowerEditorControl() { Dock = DockStyle.Fill });
+            this.Controls.Add(new Controls.PizzaTowerEditorControl(PizzaTowerSave1DataFilepath) { Dock = DockStyle.Fill });
             this.Controls[this.Controls.Count - 1].BringToFront();
 
         }

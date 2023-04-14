@@ -13,9 +13,12 @@ namespace PizzaTowerSaveEditor.Controls
 {
     public partial class PizzaTowerEditorControl : UserControl
     {
-        public PizzaTowerEditorControl()
+
+        private string _saveFileLocation = string.Empty;
+        public PizzaTowerEditorControl(string saveFileLocation)
         {
             InitializeComponent();
+            _saveFileLocation = saveFileLocation;
         }
 
         public static bool IsInDesignMode()
@@ -45,8 +48,31 @@ namespace PizzaTowerSaveEditor.Controls
             DRankBitmap = new Bitmap(Assembly.GetExecutingAssembly()!.GetManifestResourceStream("PizzaTowerSaveEditor.Resources.Pizza_Tower.Ranks.D.png")!);
             EggplantRankBitmap = new Bitmap(Assembly.GetExecutingAssembly()!.GetManifestResourceStream("PizzaTowerSaveEditor.Resources.Pizza_Tower.Ranks.Eggplant.png")!);
 
+            loadSaveInfo();
         }
 
+
+        void loadSaveInfo()
+        {
+            var saveFile = new IniFile(_saveFileLocation);
+            loadFloor1();
+
+            return;
+
+            void loadFloor1()
+            {
+
+                johnGutterPizzaTowerLevelEditor.MushroomToppinCollected = saveFile.Read("entrance1", "Toppin") == "1.000000";
+                johnGutterPizzaTowerLevelEditor.CheeseToppinCollected = saveFile.Read("entrance2", "Toppin") == "1.000000";
+                johnGutterPizzaTowerLevelEditor.TomatoToppinCollected = saveFile.Read("entrance3", "Toppin") == "1.000000";
+                johnGutterPizzaTowerLevelEditor.SausageToppinCollected = saveFile.Read("entrance4", "Toppin") == "1.000000";
+                johnGutterPizzaTowerLevelEditor.PineappleToppinCollected = saveFile.Read("entrance5", "Toppin") == "1.000000";
+
+
+            }
+        }
+
+ 
         //private void pizzaTowerLevelEditor_RankUpdate(object sender, EventArgs e)
         //{
         //    if (IsInDesignMode())

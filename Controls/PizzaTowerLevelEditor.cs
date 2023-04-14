@@ -47,7 +47,38 @@ namespace PizzaTowerSaveEditor.Controls
         public uint Points
         {
             get => Convert.ToUInt32(pointsNumericUpDown.Value);
-            set => pointsNumericUpDown.Value = value;
+            set
+            {
+                pointsNumericUpDown.Value = value;
+                checkIfValidPrank();
+                updateRank();
+            }
+        }
+
+        public bool MushroomToppinCollected
+        {
+            get => mushroomToppinCheckBox.Checked;
+            set => mushroomToppinCheckBox.Checked = value;
+        }
+        public bool CheeseToppinCollected
+        {
+            get => cheeseToppinCheckBox.Checked;
+            set => cheeseToppinCheckBox.Checked = value;
+        }
+        public bool TomatoToppinCollected
+        {
+            get => tomatoToppinCheckBox.Checked;
+            set => tomatoToppinCheckBox.Checked = value;
+        }
+        public bool SausageToppinCollected
+        {
+            get => sausageToppinCheckBox.Checked;
+            set => sausageToppinCheckBox.Checked = value;
+        }
+        public bool PineappleToppinCollected
+        {
+            get => pineappleToppinCheckBox.Checked;
+            set => pineappleToppinCheckBox.Checked = value;
         }
 
         private uint _cRankMinimum = 0;
@@ -62,7 +93,8 @@ namespace PizzaTowerSaveEditor.Controls
             set
             {
                 _cRankMinimum = value;
-                //RankUpdate?.Invoke(this, new EventArgs());
+                checkIfValidPrank();
+                updateRank();
             }
         }
         public uint BRankMinimum
@@ -71,7 +103,8 @@ namespace PizzaTowerSaveEditor.Controls
             set
             {
                 _bRankMinimum = value;
-                //RankUpdate?.Invoke(this, new EventArgs());
+                checkIfValidPrank();
+                updateRank();
             }
         }
         public uint ARankMinimum
@@ -80,7 +113,8 @@ namespace PizzaTowerSaveEditor.Controls
             set
             {
                 _aRankMinimum = value;
-                //RankUpdate?.Invoke(this, new EventArgs());
+                checkIfValidPrank();
+                updateRank();
             }
         }
         public uint SRankMinimum
@@ -89,7 +123,8 @@ namespace PizzaTowerSaveEditor.Controls
             set
             {
                 _sRankMinimum = value;
-                //RankUpdate?.Invoke(this, new EventArgs());
+                checkIfValidPrank();
+                updateRank();
             }
         }
 
@@ -99,12 +134,14 @@ namespace PizzaTowerSaveEditor.Controls
             set
             {
                 _isPRank = value;
-                //RankUpdate?.Invoke(this, EventArgs.Empty);
+
+                checkIfValidPrank();
+                updateRank();
             }
         }
         private void checkIfValidPrank()
         {
-            if (Points >= SRankMinimum && mushroomToppinCheckBox.Checked && cheeseToppinCheckBox.Checked && tomatoToppinCheckBox.Checked && sausageToppinCheckBox.Checked && pineappleToppinCheckBox.Checked && secret1CheckBox.Checked && secret2CheckBox.Checked && secret3CheckBox.Checked && treasureCheckBox.Checked && lap2CheckBox.Checked)
+            if (Points >= SRankMinimum && mushroomToppinCheckBox.Checked && cheeseToppinCheckBox.Checked && tomatoToppinCheckBox.Checked && sausageToppinCheckBox.Checked && pineappleToppinCheckBox.Checked && treasureCheckBox.Checked && secretsNumericUpDown.Value == 3)
             {
                 pRankCheckBox.Enabled = true;
             }
@@ -199,7 +236,7 @@ namespace PizzaTowerSaveEditor.Controls
             updateRank();
         }
 
-        private void lap2CheckBox_CheckedChanged(object sender, EventArgs e)
+        private void secretsNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             checkIfValidPrank();
             updateRank();
