@@ -33,6 +33,8 @@
             this.versionLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.twitterLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.githubLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +42,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::PizzaTowerSaveEditor.Properties.Resources.radtransparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(398, 134);
+            this.pictureBox1.Location = new System.Drawing.Point(208, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(280, 250);
             this.pictureBox1.TabIndex = 0;
@@ -78,7 +80,7 @@
             // twitterLinkLabel
             // 
             this.twitterLinkLabel.AutoSize = true;
-            this.twitterLinkLabel.Location = new System.Drawing.Point(31, 75);
+            this.twitterLinkLabel.Location = new System.Drawing.Point(12, 60);
             this.twitterLinkLabel.Name = "twitterLinkLabel";
             this.twitterLinkLabel.Size = new System.Drawing.Size(42, 15);
             this.twitterLinkLabel.TabIndex = 5;
@@ -87,18 +89,42 @@
             this.twitterLinkLabel.Text = "Twitter";
             this.twitterLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
+            // githubLinkLabel
+            // 
+            this.githubLinkLabel.AutoSize = true;
+            this.githubLinkLabel.Location = new System.Drawing.Point(12, 75);
+            this.githubLinkLabel.Name = "githubLinkLabel";
+            this.githubLinkLabel.Size = new System.Drawing.Size(43, 15);
+            this.githubLinkLabel.TabIndex = 6;
+            this.githubLinkLabel.TabStop = true;
+            this.githubLinkLabel.Tag = "https://github.com/Radix-Comet/PizzaTowerSaveEditor";
+            this.githubLinkLabel.Text = "Github";
+            this.githubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Discord: RadixComet#1125";
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(500, 274);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.githubLinkLabel);
             this.Controls.Add(this.twitterLinkLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AboutForm";
-            this.Text = "AboutForm";
+            this.Text = "About";
             this.Load += new System.EventHandler(this.AboutForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -113,5 +139,7 @@
         private Label versionLabel;
         private Label label2;
         private LinkLabel twitterLinkLabel;
+        private LinkLabel githubLinkLabel;
+        private Label label3;
     }
 }

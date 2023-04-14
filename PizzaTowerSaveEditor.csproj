@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
@@ -20,6 +20,46 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Pizza Tower\Ranks\A.png" />
+    <None Remove="Resources\Pizza Tower\Ranks\B.png" />
+    <None Remove="Resources\Pizza Tower\Ranks\C.png" />
+    <None Remove="Resources\Pizza Tower\Ranks\D.png" />
+    <None Remove="Resources\Pizza Tower\Ranks\Eggplant.png" />
+    <None Remove="Resources\Pizza Tower\Ranks\P.png" />
+    <None Remove="Resources\Pizza Tower\Ranks\S.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\Cheese.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\CheeseSilhouette.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\Mushroom.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\MushroomSilhouette.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\Pineapple.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\PineappleSilhouette.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\Sausage.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\SausageSilhouette.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\Tomato.png" />
+    <None Remove="Resources\Pizza Tower\Toppins\TomatoSilhouette.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Pizza Tower\Ranks\A.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Ranks\B.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Ranks\C.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Ranks\D.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Ranks\Eggplant.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Ranks\P.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Ranks\S.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\Cheese.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\CheeseSilhouette.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\Mushroom.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\MushroomSilhouette.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\Pineapple.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\PineappleSilhouette.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\Sausage.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\SausageSilhouette.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\Tomato.png" />
+    <EmbeddedResource Include="Resources\Pizza Tower\Toppins\TomatoSilhouette.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -32,6 +72,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Pizza Tower\Titlecards\" />
   </ItemGroup>
 
 </Project>

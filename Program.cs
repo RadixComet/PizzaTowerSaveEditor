@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace PizzaTowerSaveEditor
 {
     internal static class Program
